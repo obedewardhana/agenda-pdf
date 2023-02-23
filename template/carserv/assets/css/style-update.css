@@ -1,0 +1,483 @@
+/* 
+
+Update Style 
+Started Date    : 10 Desember 2021
+PIC             : Obeth Dewa Wardhana
+Project Title   : Mr. Mekanik
+
+*/
+
+.header-logo img {
+    height: 80px;
+}
+
+@media only screen and (max-width: 575px) {
+    .header-logo a img {
+        width: auto;
+    }
+
+    .header-logo img {
+        height: 60px;
+    }
+}
+
+.header-top-info p a {
+    color: #128c7e;
+}
+
+.btn-custom-01 {
+    border-bottom: 2px solid #952339;
+}
+
+.btn-custom-01:focus,
+.btn-custom-01:active,
+.btn-custom-01:hover {
+    border-bottom-color: #0c3289;
+}
+
+.btn-custom-02 {
+    border-bottom: 2px solid #0c3289;
+}
+
+.btn-custom-02:focus,
+.btn-custom-02:active,
+.btn-custom-02:hover {
+    border-bottom-color: #952339;
+}
+
+.single-slider {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px),
+only screen and (max-width: 767px) {
+    .single-slider {
+        height: auto;
+        display: block;
+    }
+}
+
+.slider-content {
+    padding-top: 180px;
+}
+
+@media only screen and (max-width: 767px) {
+    .slider-content {
+        padding-top: 180px;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .slider-content {
+        padding-top: 120px;
+    }
+}
+
+.slider-images {
+    height: auto;
+    padding-top: 180px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@media only screen and (max-width: 767px) {
+    .slider-images {
+        padding-top: 0px;
+    }
+}
+
+.about-count {
+    justify-content: flex-start;
+}
+
+.about-count .single-count {
+    margin-right: 25px;
+}
+
+.service-icon .fa {
+    font-size: 70px;
+    color: #0046e2;
+    -webkit-transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -o-transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.single-service .service-icon {
+    margin-top: 0px;
+}
+
+.single-service:hover .fa {
+    color: #ee0f39;
+}
+
+.single-service .title a {
+    text-transform: capitalize;
+}
+
+.footer-logo img {
+    height: 80px;
+}
+
+@media only screen and (max-width: 575px) {
+    .footer-logo a img {
+        width: auto;
+    }
+
+    .footer-logo img {
+        height: 60px;
+    }
+}
+
+.footer-widget-wrapper {
+    margin-top: -120px;
+    margin-bottom: -60px;
+}
+
+@media only screen and (max-width: 991px) {
+    .footer-widget-wrapper {
+        margin-top: -60px;
+        margin-bottom: 0;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px),
+only screen and (max-width: 767px) {
+    .footer-link-wrapper {
+        justify-content: flex-start;
+    }
+}
+
+.widget-info a:hover {
+    color: #dddddd;
+}
+
+.widget-subscribe .btn-custom-01:hover,
+.widget-subscribe .btn-custom-01:active,
+.widget-subscribe .btn-custom-01:focus {
+    background-color: #dddddd;
+    color: #ee0f39;
+    border-bottom-color: #ee0f39;
+}
+
+@media only screen and (max-width: 991px) {
+    .choose-content {
+        max-width: 100%;
+    }
+}
+
+.single-testimonials {
+    margin-top: 50px;
+}
+
+.no-banner {
+    padding-top: 250px;
+}
+
+@media only screen and (max-width: 991px) {
+    .no-banner {
+        padding-top: 150px;
+    }
+}
+
+label.error {
+    color: red;
+    margin-top: 12px;
+    text-align: right;
+}
+
+input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]):not([type="file"]):focus,
+textarea:focus {
+    outline: none;
+    border-color: #0046e2;
+}
+
+.form-row {
+    display: flex;
+}
+
+.form-label-group {
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.my-account-tab .account-title {
+    text-transform: capitalize;
+}
+
+.single-product .product-content .name {
+    color: #ffffff;
+    text-transform: capitalize;
+}
+
+.product-quickview-content .title {
+    text-transform: capitalize;
+}
+
+.product-quickview-content .product-categories-tags .label {
+    margin-top: 0;
+}
+
+.product-quickview-content .product-categories-tags ul li a {
+    background: #c9d9fc;
+    border-radius: 5px;
+    padding: 2px 16px;
+    font-size: 12px;
+    color: #343434;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    pointer-events: none;
+}
+
+.product-image img {
+    width: 100%;
+    height: auto;
+}
+
+textarea.form-control {
+    height: unset;
+    font-size: 14px;
+}
+
+.single-form p {
+    display: block;
+    width: 100%;
+    height: 50px;
+    padding: 0 20px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 10px;
+    margin-bottom: 0;
+    font-size: 14px;
+    border: 1px solid #cde9ff;
+    display: flex;
+    align-items: center;
+}
+
+.single-brand img {
+    height: 80px;
+    width: 100%;
+    object-fit: contain;
+}
+
+.single-product .product-image {
+    height: 338px;
+}
+
+.product-image img {
+    width: 100%;
+    object-position: center;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-quickview-content .product-action li a,
+.single-product .product-action li a {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #c9d9fc;
+    border-radius: 50%;
+    text-align: center;
+    color: #0046e2;
+    font-size: 20px;
+    border: 0;
+}
+
+.product-quickview-content .product-action li a:hover,
+.single-product .product-action li a:hover {
+    background-color: #0046e2;
+    color: #ffffff;
+}
+
+.unavailable {
+    color: #ffffff;
+    z-index: 10;
+    display: block;
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    padding: 5px 20px;
+    background: #cb3333;
+    border-radius: 8px;
+    margin: 20px;
+}
+
+button.disable {
+    opacity: 0;
+}
+
+.product-quickview-content .product-quantity input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]):not([type="file"]){
+    pointer-events: none;
+}
+
+.checkout-payment p {
+    font-size: 14px;
+}
+
+.payment-bold {
+    font-weight:700;
+    font-size:17px!important;
+}
+
+.payment-important {
+    font-size:14px;
+    font-weight:700;
+    text-decoration:underline;
+    color:green;
+}
+
+.checkout-form .single-form input + input {
+    margin:0;
+}
+
+textarea {
+    height:120px;
+}
+
+.tab-content {
+    min-height:400px;
+}
+
+.account-table .table tbody tr td {
+    padding: 10px 20px;
+}
+
+.status-pending {
+    background: #d3d3d3;
+    padding: 2px 10px;
+    border-radius: 8px;
+    color:#fff;
+}
+
+.status-review {
+    background:#ffa929;
+    padding: 2px 10px;
+    border-radius: 8px;
+    color:#fff;
+}
+
+.status-success {
+    background: #43bf58;
+    padding: 2px 10px;
+    border-radius: 8px;
+    color:#fff;
+}
+
+.status-failed {
+    background: #ff7a7a;
+    padding: 2px 10px;
+    border-radius: 8px;
+    color:#fff;
+}
+
+.account-table {
+    height: 250px;
+    overflow: auto;
+    color:#fff;
+}
+
+/* Custom File */
+
+.custom-file-control {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 5;
+    height: 2.5rem;
+    padding: 0.5rem 1rem;
+    line-height: 1.5;
+    color: #464a4c;
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.custom-file-control::before {
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    z-index: 6;
+    display: block;
+    height: 2.5rem;
+    padding: 0.5rem 1rem;
+    line-height: 30px;
+    color: #ffffff;
+    background-color: #0046e2;
+    border-radius: 10px;
+}
+
+.form-control-file, .form-control-range {
+    display: block;
+}
+
+.custom-file .custom-file-control::before {
+    content: "Upload";
+    height: 50px;
+}
+
+.custom-file .custom-file-control::after {
+    content: "Pilih gambar...";
+    line-height:28px;
+}
+
+.custom-file-control.selected::after {
+    content: "" !important;
+}
+
+.custom-file {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+    height: 2.5rem;
+    margin-bottom: 0;
+    cursor: pointer;
+    width:100%;
+}
+
+.custom-file {
+    height: 52px;
+}
+
+.custom-file-control {
+    white-space: nowrap;
+    height: 50px;
+    border: 1px solid #cde9ff
+}
+
+.custom-file-input {
+    min-width: 14rem;
+    max-width: 100%;
+    height: 52px;
+    margin: 0;
+    filter: alpha(opacity=0);
+    opacity: 0;
+}
+
+.custom-file-input{
+    cursor:pointer;
+}
+
+.over-hidden {
+    overflow: hidden;
+}
+
+.error-upload {
+    font-size: 12px;
+}
+
