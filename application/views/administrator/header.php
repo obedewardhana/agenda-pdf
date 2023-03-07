@@ -49,6 +49,7 @@ if (!isset($authPage)) {
     <script src="<?= base_url(); ?>assets/sufee/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="<?= base_url(); ?>assets/sufee/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
     <script src="<?= base_url(); ?>assets/sufee/vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="<?= base_url(); ?>assets/jqueryvalidate/jquery.validate.js"></script>
     <script src="<?= base_url(); ?>assets/sweetalert2/sweetalert2.all.min.js"></script>
     <script src="<?= base_url(); ?>assets/daterangepicker/js/datepicker-full.min.js"></script>
     <script src="<?= base_url(); ?>assets/sufee/vendors/chart.js/dist/Chart.min.js"></script>
@@ -76,56 +77,18 @@ if (!isset($authPage)) {
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fa fa-bars"></i>
                     </button>
-                    <a class="navbar-brand" href="<?= base_url(); ?>">MR. MEKANIK</a>
+                    <a class="navbar-brand" href="<?= base_url(); ?>"><?= $this->company_info->get_company_name(); ?></a>
                     <a class="navbar-brand hidden" href="<?= base_url(); ?>">B</a>
                 </div>
 
                 <div id="main-menu" class="main-menu collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li>
+                        <li <?php echo ($pageTitle == 'Dashboard') ? "class='active'" : ""; ?>>
                             <a href="<?= base_url("dashboard"); ?>"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                         </li>
                         <h3 class="menu-title">Master Data</h3>
-                        <li>
-                            <a href="<?= base_url("sparepart"); ?>"> <i class="menu-icon fa fa-archive"></i>Data Sparepart </a>
-                        </li>
-                        <li>
-                            <a href="<?= base_url("services"); ?>"> <i class="menu-icon fa fa-cogs"></i>Data Services </a>
-                        </li>
-                        <li>
-                            <a href="<?= base_url("supplier"); ?>"> <i class="menu-icon fa fa-users"></i>Data Supplier </a>
-                        </li>
-                        <li>
-                            <a href="<?= base_url("partners"); ?>"> <i class="menu-icon fa fa-users"></i>Data Partners </a>
-                        </li>
-                        <li>
-                            <a href="<?= base_url("purchase"); ?>"> <i class="menu-icon fa fa-shopping-cart"></i>Data Pembelian Stock </a>
-                        </li>
-                        <li>
-                            <a href="<?= base_url("testimonials"); ?>"> <i class="menu-icon fa fa-list"></i>Data Testimonials</a>
-                        </li>
-                        <li>
-                            <a href="<?= base_url("orders"); ?>"> <i class="menu-icon fa fa-shopping-cart"></i>Data Orders </a>
-                        </li>
-                        <h3 class="menu-title">Transaksi</h3>
-                        <li>
-                            <a href="<?= base_url("transaction"); ?>"> <i class="menu-icon fa fa-plus-square"></i>Tambah Transaksi</a>
-                        </li>
-                        <li>
-                            <a href="<?= base_url("sparepart_sales"); ?>"> <i class="menu-icon fa fa-list"></i>Riwayat Penjualan</a>
-                        </li>
-                        <li>
-                            <a href="<?= base_url("service_sales"); ?>"> <i class="menu-icon fa fa-list"></i>Riwayat Service</a>
-                        </li>
-                        <h3 class="menu-title">Laporan</h3>
-                        <li>
-                            <a href="<?= base_url("report/sales"); ?>"> <i class="menu-icon fa fa-bar-chart-o"></i>Laporan Penjualan</a>
-                        </li>
-                        <li>
-                            <a href="<?= base_url("report/service"); ?>"> <i class="menu-icon fa fa-bar-chart-o"></i>Laporan Service</a>
-                        </li>
-                        <li>
-                            <a href="<?= base_url("report/purchase"); ?>"> <i class="menu-icon fa fa-bar-chart-o"></i>Laporan Pembelian</a>
+                        <li <?php echo ($pageTitle == 'Users') ? "class='active'" : ""; ?>>
+                            <a href="<?= base_url("users"); ?>"> <i class="menu-icon fa fa-user"></i>Users </a>
                         </li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
@@ -143,25 +106,35 @@ if (!isset($authPage)) {
 
                 <div class="header-menu">
 
+
                     <div class="col-sm-7">
                         <div class="header-left">
-                            <div style="height:41px"></div>
+                            <div style="height:41px; display:flex; align-items:center;">
+                                <h5></h5>
+                                <p><?php echo $dataAdmin->role; ?></p>
+                            </div>
                         </div>
                     </div>
 
                     <div class="col-sm-5">
                         <div class="user-area dropdown float-right">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img class="user-avatar rounded-circle" src="<?= base_url("assets/avatar-1.png"); ?>" alt="User Avatar">
+                                <?php if ($dataAdmin->photo == '') { ?>
+                                    <img class="user-avatar rounded-circle" src="<?= base_url("assets/avatar-1.png"); ?>" alt="User Avatar">
+                                <?php } else { ?>
+                                    <img class="user-avatar rounded-circle" src="<?= base_url('img/' . $dataAdmin->photo); ?>" alt="User Avatar">
+                                <?php } ?>
                             </a>
 
                             <div class="user-menu dropdown-menu">
 
-                                <a class="nav-link" href="<?= base_url("setting/change_password"); ?>"><i class="fa fa-key"></i> Ganti Password</a>
-
-                                <a class="nav-link" href="<?= base_url("setting/company_info"); ?>"><i class="fa fa-cog"></i> Pengaturan</a>
-
-                                <a class="nav-link" href="<?= base_url("auth/logout"); ?>"><i class="fa fa-power-off"></i> Logout</a>
+                                <a class="nav-link" href="<?= base_url("setting/change_password"); ?>"><i class="fa fa-key mr-1"></i>Ganti Password</a>
+                                <?php if ($dataAdmin->role == 'admin') { ?>
+                                    <a class="nav-link" href="<?= base_url("setting/company_info"); ?>"><i class="fa fa-cog mr-1"></i>Pengaturan</a>
+                                <?php } else { ?>
+                                    <a class="nav-link" href="<?= base_url("setting/profile"); ?>"><i class="fa fa-user mr-1"></i>Profil</a>
+                                <?php } ?>
+                                <a class="nav-link" href="<?= base_url("auth/logout"); ?>"><i class="fa fa-power-off mr-1"></i>Logout</a>
                             </div>
                         </div>
                     </div>

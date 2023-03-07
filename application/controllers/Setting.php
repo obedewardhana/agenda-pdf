@@ -51,9 +51,6 @@ class Setting extends CI_Controller {
         $facebook = $this->input->post("facebook");
         $instagram = $this->input->post("instagram");
         $youtube = $this->input->post("youtube");
-        $bankname = $this->input->post("bankname");
-        $bankno = $this->input->post("bankno");
-        $bankaccount = $this->input->post("bankaccount");
 
         if($name and $address) {
             $config['upload_path']          = '././img/';
@@ -75,16 +72,13 @@ class Setting extends CI_Controller {
 
             $response = [
                 "status" => TRUE,
-                "msg" => "Info bengkel telah diperbaharui"
+                "msg" => "Info Instansi telah diperbaharui"
             ];
 
             $this->user_model->set_company([
                 "name" => $name,
                 "address" => $address,
                 "email" => $email,        
-                "bank_no" => $bankno,                        
-                "bank_name" => $bankname,
-                "bank_account" => $bankaccount,
                 "whatsapp" => $whatsapp,
                 "facebook" => $facebook,
                 "instagram" => $instagram,
@@ -98,6 +92,19 @@ class Setting extends CI_Controller {
         }
 
         echo json_encode($response);
+    }
+
+    public function profile()
+	{
+
+        $push = [
+            "pageTitle" => "Profile",
+            "dataAdmin" => $this->dataAdmin
+        ];
+
+        $this->load->view('administrator/header',$push);
+		$this->load->view('administrator/profile',$push);
+        $this->load->view('administrator/footer',$push);
     }
 
     function save_password() {
@@ -135,5 +142,46 @@ class Setting extends CI_Controller {
 
         echo json_encode($response);
     }
+
+    public function save_profile() {
+        $id = $this->dataAdmin->id;
+        $name = $this->input->post("name");
+        $email = $this->input->post("email");
+
+        if (!$name or !$email) {
+            $response['status'] = FALSE;
+            $response['msg'] = "Periksa kembali data yang anda masukkan";
+        } else {
+
+            $config['upload_path']          = '././img/';
+            $config['allowed_types']        = 'jpeg|jpg|png|JPEG|JPG|PNG';
+            $config['max_size']             = 2048;
+            $config['overwrite']            = TRUE;
+
+            $this->load->library('upload', $config);
+
+            if ($this->upload->do_upload('userfile')) {
+                $gbr = $this->upload->data();
+                $gambar = $gbr['file_name'];
+
+                $data = [
+                    "name" => $name,
+                    "email" => $email,
+                    "photo" => $gambar
+                ];
+            } else {
+                $data = [
+                    "name" => $name,
+                    "email" => $email
+                ];
+            }
+
+            $response['status'] = TRUE;
+            $response['msg'] = "Data berhasil diedit";
+            $this->user_model->put($id, $data);
+        }
+
+        echo json_encode($response);
+    }
+    
 }
-?>

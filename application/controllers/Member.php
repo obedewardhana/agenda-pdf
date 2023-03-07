@@ -163,7 +163,7 @@ class Member extends CI_Controller
 						'charset'   => 'utf-8',
 						'protocol'  => 'smtp',
 						'smtp_host' => 'smtp.gmail.com',
-						'smtp_user' => 'mrmekanikweb@gmail.com',  // Email gmail
+						'smtp_user' => 'obedewardhana@gmail.com',  // Email gmail
 						'smtp_pass'   => 'cobalagi123',  // Password gmail
 						'smtp_crypto' => 'ssl',
 						'smtp_port'   => 465,
@@ -173,7 +173,7 @@ class Member extends CI_Controller
 
 					$this->email->initialize($config);
 
-					$this->email->from('mrmekanikweb@gmail.com', 'Website Bengkel');
+					$this->email->from('obedewardhana@gmail.com', 'Website Instansi');
 					$this->email->to($email);
 					$this->email->cc('');
 					$this->email->bcc('');

@@ -23,11 +23,11 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-12">
                             <div class="form-group">
-                                <label>Logo Bengkel</label>
+                                <label>Logo</label>
                                 <input type="file" name="userfile" class="dropify" data-default-file="<?= base_url(); ?>img/<?= $this->company_info->get_company_logo(); ?>" value="<?= $this->company_info->get_company_logo(); ?>" />
                             </div>
                             <div class="form-group">
-                                <label>Nama Bengkel</label>
+                                <label>Nama</label>
                                 <input type="text" name="name" class="form-control" value="<?= $this->company_info->get_company_name(); ?>">
                             </div>
                             <div class="form-group">
@@ -37,29 +37,6 @@
                             <div class="form-group">
                                 <label>Email</label>
                                 <input type="text" name="email" class="form-control" value="<?= $this->company_info->get_company_email(); ?>">
-                            </div>
-                            <div class="form-group">
-                                <label>Bank Penerima :</label>
-                                <select name="bankname" class="form-control" >
-                                    <option value="" disabled>-Pilih-</option>
-                                    <option value="Mandiri Syariah" <?php if ($this->company_info->get_company_bank() == "SYARIAH MANDIRI") echo 'selected="selected"'; ?>>Bank Syariah Indonesia </option>
-                                    <option value="BCA <?php if ($this->company_info->get_company_bank() == "BCA") echo 'selected="selected"'; ?>">Bank Central Asia (BCA)</option>
-                                    <option value="BNI" <?php if ($this->company_info->get_company_bank() == "BNI") echo 'selected="selected"'; ?>>Bank Negara Indonesia (BNI)</option>
-                                    <option value="Permata" <?php if ($this->company_info->get_company_bank() == "Permata") echo 'selected="selected"'; ?>>Bank Permata </option>
-                                    <option value="Mandiri" <?php if ($this->company_info->get_company_bank() == "Mandiri") echo 'selected="selected"'; ?>>Bank Mandiri </option>
-                                    <option value="BRI" <?php if ($this->company_info->get_company_bank() == "BRI") echo 'selected="selected"'; ?>>Bank Rakyat Indonesia (BRI) </option>
-                                    <option value="BCA Syariah" <?php if ($this->company_info->get_company_bank() == "BCA Syariah") echo 'selected="selected"'; ?>>Bank Central Asia Syariah (BCA Syariah)</option>
-                                    <option value="BNI Syariah" <?php if ($this->company_info->get_company_bank() == "BNI Syariah") echo 'selected="selected"'; ?>>Bank Negara Indonesia Syariah (BNI Syariah)</option>
-                                    <option value="BRI Syariah" <?php if ($this->company_info->get_company_bank() == "BRI Syariah") echo 'selected="selected"'; ?>>Bank Rakyat Indonesia Syariah (BRI Syariah) </option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>Nomor Rekening</label>
-                                <input type="text" name="bankno" class="form-control" value="<?= $this->company_info->get_company_bankno(); ?>">
-                            </div>
-                            <div class="form-group">
-                                <label>Nama Pemilik Rekening</label>
-                                <input type="text" name="bankaccount" class="form-control" value="<?= $this->company_info->get_company_bankaccount(); ?>">
                             </div>
                             <div class="form-group">
                                 <label>No. Whatsapp</label>
@@ -91,9 +68,6 @@
                 form.append("name", jQuery('input[name=name]').val());
                 form.append("address", jQuery('textarea[name=address]').val());
                 form.append("email", jQuery('input[name=email]').val());
-                form.append("bankname", jQuery('select[name=bankname]').val());
-                form.append("bankno", jQuery('input[name=bankno]').val());
-                form.append("bankaccount", jQuery('input[name=bankaccount]').val());
                 form.append("whatsapp", jQuery('input[name=whatsapp]').val());
                 form.append("facebook", jQuery('input[name=facebook]').val());
                 form.append("instagram", jQuery('input[name=instagram]').val());
@@ -112,7 +86,8 @@
                                 'Berhasil',
                                 data.msg,
                                 'success'
-                            )
+                            );
+                            window.location.reload();
                         } else {
                             Swal.fire(
                                 'Gagal',

@@ -11,84 +11,90 @@ h4,
 h5,
 a,
 p,
-label,button {
-    font-family: 'Poppins', sans-serif;
-    letter-spacing: 0;
+label,
+button {
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0;
 }
 
 .font-weight-bold {
-    font-weight:bold;
+  font-weight: bold;
 }
 
+body {
+  display: block;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
 
 .login-content {
-    max-width: 540px;
-    margin: 0;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: block;
-    position: absolute;
-    width: 100%;
+  max-width: 540px;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  position: absolute;
+  width: 100%;
 }
 
 .login-form {
-    background: #ffffff;
-    padding: 30px 30px 40px;
-    border-radius: 10px;
+  background: #ffffff;
+  padding: 30px 30px 40px;
+  border-radius: 10px;
 }
 
 .login-logo {
-    color: #28a745;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 20px;    
-    text-transform: uppercase;
+  color: #28a745;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+  text-transform: uppercase;
 }
 
 .login-logo img {
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    object-position: center;
-    background:#ffffff;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  object-position: center;
+  background: #ffffff;
 }
 
 .login-logo h3 {
-    margin-left:20px;
+  margin-left: 20px;
 }
 
 .smooth-shadow {
-    box-shadow:
-        2.8px 2.8px 2.2px -23px rgba(0, 0, 0, 0.014),
-        6.7px 6.7px 5.3px -23px rgba(0, 0, 0, 0.02),
-        12.5px 12.5px 10px -23px rgba(0, 0, 0, 0.025),
-        22.3px 22.3px 17.9px -23px rgba(0, 0, 0, 0.03),
-        41.8px 41.8px 33.4px -23px rgba(0, 0, 0, 0.036),
-        100px 100px 80px -23px rgba(0, 0, 0, 0.05);
+  box-shadow:
+    2.8px 2.8px 2.2px -23px rgba(0, 0, 0, 0.014),
+    6.7px 6.7px 5.3px -23px rgba(0, 0, 0, 0.02),
+    12.5px 12.5px 10px -23px rgba(0, 0, 0, 0.025),
+    22.3px 22.3px 17.9px -23px rgba(0, 0, 0, 0.03),
+    41.8px 41.8px 33.4px -23px rgba(0, 0, 0, 0.036),
+    100px 100px 80px -23px rgba(0, 0, 0, 0.05);
 }
 
 .logo-img {
-    display: block;
-    position: relative;
+  display: block;
+  position: relative;
 }
 
 .logo-img .bg-logo {
-    display: block;
-    position: absolute;
-    top: -6px;
-    z-index: 2;
-    background: transparent;
-    left: 0;
-    width: 90px;
-    height: 90px;
+  display: block;
+  position: absolute;
+  top: -6px;
+  z-index: 2;
+  background: transparent;
+  left: 0;
+  width: 90px;
+  height: 90px;
 }
 
 .back {
-    display: block;
-    transform: rotateY(180deg);
+  display: block;
+  transform: rotateY(180deg);
 }
 
 .back {
@@ -101,19 +107,151 @@ label,button {
   animation: Rotate 4s linear infinite;
 }
 
+/* Navigasi */
+
+aside.left-panel {
+  display: block;
+  position: fixed;
+  z-index: 2;
+}
+
+.right-panel {
+  display: block;
+  position: relative;
+  margin-left: 280px;
+}
+
+.navbar .navbar-brand,
+.navbar .navbar-nav li>a {
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar .navbar-nav>.active>a,
+.navbar .navbar-nav>.active>a:focus,
+.navbar .navbar-nav>.active>a:hover {
+  font-weight: 800;
+}
+
+.table-img {
+  width: 100px;
+  height: 100px;
+  display: block;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 5px 0;
+}
+
+.table-img img {
+  outline: none;
+  border: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.btn-previewimg {
+  border: none;
+}
+
+.form-group {
+  position: relative;
+}
+
+label.error {
+  font-size: 10px;
+  color: red;
+  margin-top: 5px;
+  display: block;
+  position: absolute;
+  bottom: -3px;
+  right: 8px;
+  z-index: 2;
+  background: #ffffff;
+  padding: 1px 10px;
+}
+
+.img-box {
+  height: 400px;
+}
+
+.img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.header-left h5 {
+  font-size: 18px;
+  text-transform: capitalize;
+  color:#7c8efc;
+}
+.header-left p {
+  font-size: 10px;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 0px 10px;
+  border-radius: 4px;
+  color: #7c8efc;
+  letter-spacing: 1px;
+  margin: 0;
+  /* margin-left: 16px; */
+  border:1px solid #7c8efc;
+}
+
+.breadcrumb li.active {
+  font-family: 'Poppins',sans-serif;
+  color: #cbcbcb;
+}
+
+.user-area .user-avatar {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.nav-link .fa {
+  width: 15px;
+}
+
 @-webkit-keyframes Rotate {
-  75% {-webkit-transform:rotateY(0deg);}
-  100% {-webkit-transform:rotateY(360deg);}
+  75% {
+    -webkit-transform: rotateY(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotateY(360deg);
+  }
 }
+
 @-webkit-keyframes BackRotate {
-  75% {-webkit-transform:rotateY(180deg);}
-  100% {-webkit-transform:rotateY(540deg);}
-} 
-@keyframes Rotate {
-  75% {-webkit-transform:rotateY(0deg);}
-  100% {-webkit-transform:rotateY(360deg);}
+  75% {
+    -webkit-transform: rotateY(180deg);
+  }
+
+  100% {
+    -webkit-transform: rotateY(540deg);
+  }
 }
+
+@keyframes Rotate {
+  75% {
+    -webkit-transform: rotateY(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotateY(360deg);
+  }
+}
+
 @keyframes BackRotate {
-  75% {-webkit-transform:rotateY(180deg);}
-  100% {-webkit-transform:rotateY(540deg);}
+  75% {
+    -webkit-transform: rotateY(180deg);
+  }
+
+  100% {
+    -webkit-transform: rotateY(540deg);
+  }
 }
