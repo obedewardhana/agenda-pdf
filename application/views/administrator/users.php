@@ -155,6 +155,7 @@
         jQuery("input[name=password]").closest('.form-group').find('label').remove();
         jQuery('.form-group').last().html(htmlpassword);
         jQuery(".dropify-clear").trigger("click");
+        jQuery("#composeForm").validate().resetForm();
     });
 
     $("#data").DataTable({

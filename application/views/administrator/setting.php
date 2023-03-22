@@ -56,8 +56,11 @@
                             </div>
                         </div>
                     </div>
-
-                    <button type="button" class="btn btn-primary btn-save">Simpan</button>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <button type="button" class="btn btn-primary btn-save">Simpan</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -86,8 +89,9 @@
                                 'Berhasil',
                                 data.msg,
                                 'success'
-                            );
-                            window.location.reload();
+                            ).then((result) => {
+                                window.location.reload();
+                            });
                         } else {
                             Swal.fire(
                                 'Gagal',

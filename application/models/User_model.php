@@ -1,17 +1,26 @@
 <?php
 
-class User_model extends CI_Model {
+class User_model extends CI_Model
+{
 
-    function post($data) {
-        $this->db->insert("users",$data);
+    function post($data)
+    {
+        $this->db->insert("users", $data);
     }
 
-    function get($where = array()) {
-        if($where) {
-            return $this->db->get_where("users",$where);
+    function get($where = array())
+    {
+        if ($where) {
+            return $this->db->get_where("users", $where);
         } else {
             return $this->db->get("users");
         }
+    }
+
+    function get_total()
+    {
+        $query = $this->db->get('users');
+        return $query->num_rows();
     }
 
     public function find($id)
@@ -24,22 +33,26 @@ class User_model extends CI_Model {
         else return array();
     }
 
-    function set_company($data) {
-        $this->db->where("id",1);
-        $this->db->update("company_info",$data);
+    function set_company($data)
+    {
+        $this->db->where("id", 1);
+        $this->db->update("company_info", $data);
     }
 
-    function set_user($id,$data) {
-        $this->db->where("id",$id);
-        $this->db->update("users",$data);
+    function set_user($id, $data)
+    {
+        $this->db->where("id", $id);
+        $this->db->update("users", $data);
     }
 
-    function put($id,$data) {
-        $this->db->where("id",$id);
-        $this->db->update("users",$data);
+    function put($id, $data)
+    {
+        $this->db->where("id", $id);
+        $this->db->update("users", $data);
     }
 
-    function delete($id) {
-        $this->db->delete("users",["id" => $id]);
+    function delete($id)
+    {
+        $this->db->delete("users", ["id" => $id]);
     }
 }

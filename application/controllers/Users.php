@@ -48,7 +48,7 @@ class Users extends CI_Controller
                 <button type="button" class="btn btn-danger btn-sm btn-delete" data-id="<get-id>" data-name="<get-name>" data-photo="<get-photo>"><i class="fa fa-trash"></i></button></div>'
             ]);
             $this->datatables->setOrdering(["id", "username", "name", "email", NULL]);
-            $this->datatables->setSearchField("name");
+            $this->datatables->setSearchField(["username","name","email","role"]);
             $this->datatables->generate();
         } else if ($this->dataAdmin->role == 'user') { 
             $this->load->model("datatables");
@@ -62,7 +62,7 @@ class Users extends CI_Controller
                 '<get-role>'
             ]);
             $this->datatables->setOrdering(["id", "username", "name", "email", NULL]);
-            $this->datatables->setSearchField("name");
+            $this->datatables->setSearchField(["username","name","email","role"]);
             $this->datatables->generate();
         }
     }

@@ -1,0 +1,9 @@
+/* Custom Responsive Style */
+
+
+
+@media (max-width: 575.99px) {
+    .right-panel {
+        margin-left:0;
+    }
+}

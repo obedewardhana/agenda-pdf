@@ -185,8 +185,9 @@ label.error {
 .header-left h5 {
   font-size: 18px;
   text-transform: capitalize;
-  color:#7c8efc;
+  color: #7c8efc;
 }
+
 .header-left p {
   font-size: 10px;
   text-transform: uppercase;
@@ -197,11 +198,11 @@ label.error {
   letter-spacing: 1px;
   margin: 0;
   /* margin-left: 16px; */
-  border:1px solid #7c8efc;
+  border: 1px solid #7c8efc;
 }
 
 .breadcrumb li.active {
-  font-family: 'Poppins',sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: #cbcbcb;
 }
 
@@ -214,6 +215,85 @@ label.error {
 
 .nav-link .fa {
   width: 15px;
+}
+
+span.count {
+  font-size: 60px;
+}
+
+.content .card-body {
+  display: flex;
+  padding: 20px;
+  flex-wrap: wrap;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.content .card-body .card-icon {
+  font-size: 120px;
+  display: block;
+  position: absolute;
+  right: 10px;
+  height: 100%;
+  opacity: .5;
+  bottom: -20px;
+}
+
+.card-header .btn {
+  min-width: 160px;
+  border-radius: 5px;
+  padding: 8px 12px;
+}
+
+.table .btn {
+  border-radius: 5px;
+}
+
+.format-link {
+  color: #878787;
+  display: flex;
+  align-items: center;
+}
+
+.format-link .fa {
+    width: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#word-result section {
+  padding: 0!important;
+}
+
+#word-result div, #word-result section {
+  min-height: unset!important;
+}
+
+#word-result {
+  display: none;
+  position: relative;
+  background: #f7f7f7;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.links {
+  color: #007bff;
+  text-decoration:underline;
+}
+
+.datepicker td, .datepicker th {
+  padding: 7px;
+}
+
+.card {
+  border-radius: 12px;
+}
+
+.fc-event-time{
+  display : none!important;
 }
 
 @-webkit-keyframes Rotate {

@@ -22,13 +22,13 @@ if (!isset($authPage)) {
     <link rel="stylesheet" href="<?= base_url(); ?>assets/sufee/vendors/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?= base_url(); ?>assets/sufee/vendors/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="<?= base_url(); ?>assets/sweetalert2/sweetalert2.min.css">
-    <link rel="stylesheet" href="<?= base_url(); ?>assets/daterangepicker/css/datepicker.min.css">
-    <link rel="stylesheet" href="<?= base_url(); ?>assets/daterangepicker/css/datepicker-bs4.min.css">
+    <link rel="stylesheet" href="<?= base_url(); ?>assets/bootstrap-datepicker/css/bootstrap-datepicker.min.css">
     <link rel="stylesheet" href="<?= base_url(); ?>assets/pace-style.css">
     <link rel="stylesheet" href="<?= base_url(); ?>assets/dropify/css/dropify.min.css">
 
     <link rel="stylesheet" href="<?= base_url(); ?>assets/sufee/assets/css/style.css">
     <link rel="stylesheet" href="<?= base_url(); ?>assets/css/custom.css">
+    <link rel="stylesheet" href="<?= base_url(); ?>assets/css/responsive.css">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
@@ -51,9 +51,13 @@ if (!isset($authPage)) {
     <script src="<?= base_url(); ?>assets/sufee/vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
     <script src="<?= base_url(); ?>assets/jqueryvalidate/jquery.validate.js"></script>
     <script src="<?= base_url(); ?>assets/sweetalert2/sweetalert2.all.min.js"></script>
-    <script src="<?= base_url(); ?>assets/daterangepicker/js/datepicker-full.min.js"></script>
+    <script src="<?= base_url(); ?>assets/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
     <script src="<?= base_url(); ?>assets/sufee/vendors/chart.js/dist/Chart.min.js"></script>
+    <script src="<?= base_url(); ?>assets/fullcalendar/index.global.min.js"></script>
     <script src="<?= base_url(); ?>assets/dropify/js/dropify.min.js"></script>
+    <script src="<?= base_url(); ?>assets/pdfextractor/pdf.js"></script>
+    <script src="<?= base_url(); ?>assets/pdfextractor/pdf-table-extractor.js"></script>
+    <script src="<?= base_url(); ?>assets/docx2html/docx2html.min.js"></script>
     <script>
         paceOptions = {
             restartOnRequestAfter: 5,
@@ -87,8 +91,24 @@ if (!isset($authPage)) {
                             <a href="<?= base_url("dashboard"); ?>"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                         </li>
                         <h3 class="menu-title">Master Data</h3>
+                        <li <?php echo ($pageTitle == 'Agenda') ? "class='active'" : ""; ?>>
+                            <a href="<?= base_url("agenda"); ?>"> <i class="menu-icon fa fa-calendar"></i>Data Agenda </a>
+                        </li>
+                        <li <?php echo ($pageTitle == 'Minutes') ? "class='active'" : ""; ?>>
+                            <a href="<?= base_url("minutes"); ?>"> <i class="menu-icon fa fa-file"></i>Data Notulen </a>
+                        </li>
+                        <li <?php echo ($pageTitle == 'Invitation') ? "class='active'" : ""; ?>>
+                            <a href="<?= base_url("invitation"); ?>"> <i class="menu-icon fa fa-envelope"></i>Data Undangan </a>
+                        </li>
+                        <li <?php echo ($pageTitle == 'Attendant') ? "class='active'" : ""; ?>>
+                            <a href="<?= base_url("attendant"); ?>"> <i class="menu-icon fa fa-group"></i>Data Hadirin </a>
+                        </li>
                         <li <?php echo ($pageTitle == 'Users') ? "class='active'" : ""; ?>>
-                            <a href="<?= base_url("users"); ?>"> <i class="menu-icon fa fa-user"></i>Users </a>
+                            <a href="<?= base_url("users"); ?>"> <i class="menu-icon fa fa-user"></i>Data User </a>
+                        </li>
+                        <h3 class="menu-title">Master Laporan</h3>
+                        <li <?php echo ($pageTitle == 'Report') ? "class='active'" : ""; ?>>
+                            <a href="<?= base_url("agenda/report"); ?>" target="_blank"> <i class="menu-icon fa fa-file-pdf-o"></i>Laporan Agenda </a>
                         </li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
