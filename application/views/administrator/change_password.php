@@ -48,11 +48,11 @@
 
         <script>
             $(".btn-save").on("click", function() {
-                var form = {
-                    "oldpw": jQuery('input[name=oldpw]').val(),
-                    "newpw1": jQuery('input[name=newpw1]').val(),
-                    "newpw2": jQuery('input[name=newpw2]').val(),
-                };
+                var form = new FormData();
+                form.append("oldpw", jQuery('input[name=oldpw]').val());
+                form.append("newpw1", jQuery('input[name=newpw1]').val());
+                form.append("newpw2", jQuery('input[name=newpw2]').val());
+
                 jQuery.ajax({
                     url: "<?= base_url("setting/save_password"); ?>",
                     method: "POST",

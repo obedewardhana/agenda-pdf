@@ -112,7 +112,7 @@ class Setting extends CI_Controller {
         $newpw1 = $this->input->post("newpw1");
         $newpw2 = $this->input->post("newpw2");
 
-        if(!password_verify($oldpw,$this->dataAdmin->password)) {
+        if(!md5($oldpw)) {
             $response = [
                 "status" => FALSE,
                 "msg" => "Password lama yang anda masukkan salah"
@@ -135,7 +135,7 @@ class Setting extends CI_Controller {
                         "msg" => "Password telah diganti"
                     ];
 
-                    $this->user_model->set_user($this->dataAdmin->id,["password" => password_hash($newpw1,PASSWORD_BCRYPT)]);
+                    $this->user_model->set_user($this->dataAdmin->id,["password" => md5($newpw1)]);
                 }
             }
         }
